@@ -51,7 +51,8 @@ button.append('<i class="fas fa-save" aria-hidden="true"></i>');
 var entryEl = $('<textarea>');
 entryEl.addClass('col-8 col-md-10 description');
 entryEl.attr('rows', "3");
-entryEl.attr('id')
+entryEl.attr('id');
+entryEl.text(localStorage.getItem(i));
 
 
 
@@ -77,20 +78,22 @@ mainEl.append(timeSlot);
 console.log (entryEl.val());
 
 
+
 button.on('click', function(){
 var saveEl = $('.description').val();
+console.log(saveEl);
 var idenEl = $(this).closest('p').attr('id');
 console.log($(this).closest('p').attr('id'));
 localStorage.setItem(idenEl, saveEl);
 });
 
-//console.log(idenEl);
+
 
 }
 
 
 
-//var entryEl = localStorage.getItem(idenEl);
+
 
 $('#document').on('click', function(){
  location.reload();
